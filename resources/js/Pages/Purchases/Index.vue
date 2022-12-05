@@ -6,12 +6,15 @@ import FlashMessage from '@/Components/FlashMessage.vue'
 import Pagination from '@/Components/Pagination.vue'
 import { Inertia } from '@inertiajs/inertia';
 import dayjs from 'dayjs'
+
 const props = defineProps({
   orders: Object
 })
+
 onMounted(() => {
   console.log(props.orders.data)
 })
+
 </script>
 
 <template>

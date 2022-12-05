@@ -5,14 +5,18 @@ import { onMounted, reactive, ref, computed } from 'vue'
 import { Inertia } from '@inertiajs/inertia'
 import BreezeValidationErrors from '@/Components/ValidationErrors.vue';
 import dayjs from 'dayjs'
+
 const props = defineProps({
   'items' : Array,
   'order' : Array
 })
+
 onMounted(() => {
   console.log(props.items)
   console.log(props.order[0].customer_name)
 })
+
+
 </script>
 
 <template>

@@ -1,5 +1,3 @@
-
-
 <script setup>
 import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
 import { Head } from '@inertiajs/inertia-vue3';
@@ -8,10 +6,12 @@ import { Inertia } from '@inertiajs/inertia'
 import BreezeValidationErrors from '@/Components/ValidationErrors.vue';
 import { getToday } from '@/common'
 import MicroModal from '@/Components/MicroModal.vue'
+
 const props = defineProps({
   // 'customers': Array,
   'items' : Array
 })
+
 onMounted(() => {
   form.date = getToday()
   props.items.forEach( item => {
@@ -23,13 +23,17 @@ onMounted(() => {
     })
   })
 })
+
 const itemList = ref([])
+
+
 const form = reactive({
   date: null,
   customer_id: null,
   status: true,
   items: []
 })
+
 const totalPrice = computed(() => {
   let total = 0
   itemList.value.forEach( item => {
@@ -37,6 +41,7 @@ const totalPrice = computed(() => {
   })
   return total
 })
+
 const storePurchase = () => {
   itemList.value.forEach( item => {
     if( item.quantity > 0){
@@ -48,7 +53,9 @@ const storePurchase = () => {
   })
   Inertia.post(route('purchases.store'), form )
 }
+
 const quantity = [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"] 
+
 const setCustomerId = id => {
   form.customer_id = id
 }
