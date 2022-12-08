@@ -42,9 +42,11 @@ const showingNavigationDropdown = ref(false);
                                 <BreezeNavLink :href="route('customers.index')" :active="route().current('customers.index')">
                                     顧客管理
                                 </BreezeNavLink>
+                                <BreezeNavLink :href="route('analysis')" :active="route().current('analysis')">
+                                    データ分析
+                                </BreezeNavLink>
                             </div>
                         </div>
-
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
                             <!-- Settings Dropdown -->
                             <div class="ml-3 relative">
